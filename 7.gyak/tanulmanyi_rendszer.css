@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+ul {
+    list-style-type: none;
+    background-color: #004735;
+    padding-inline-start: 0;
+}
+li{
+    width: 100px;
+    display: inline-block;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin: 5px 10px 5px 10px;
+    text-align: center;
+}
+li:hover{
+    color: pink;
+}
+li > a{
+    color: white;
+    text-decoration: none;
+}
+li > a:hover{
+    color: blue;
+}
+h1{
+    text-align: center;
+}
+
+
+/* --------------------- */
+
+.nav-bar {
+    background-color: #004735;
+    display: flex;          /*flexbox lett az elem*/
+    flex-direction: row;    /*elemek megjelenítésének irányát adja meg (sor oszlop)*/
+    height: 50px;
+    /*justify-content: center;    /*főtengely irányán igazít*/
+    justify-content: space-around;  /*szétszórja az elemeket, egyenlő távolság az elemek közt*/
+    align-items: center;        /*melléktengely irányán igazít*/
+}
+
+
+.nav-bar > div{
+    font-size: 28;
+    color: white;
+}
+.nav-bar > div > a{
+    color: wheat;
+    text-decoration: none;
+
+}
