@@ -2,8 +2,51 @@
     <head>
         <title>Tanulmanyi rendszer</title>
         <link rel="stylesheet" href="tanulmanyi_rendszer.css">
+        <link rel="stylesheet" href="tabla.css">
+
+        <script>
+            let courses = new Array(10); //10 elemű tömb
+            courses[0] = {name: "Prog 1", credit: 6, felev: "2"};
+            courses[1] = {name: "Prog 2", credit: 6, felev: "2"};
+            courses[2] = {name: "Prog 3", credit: 6, felev: "2"};
+            courses[3] = {name: "WebTech", credit: 6, felev: "2"};
+            courses[4] = {name: "WebTech", credit: 6, felev: "2"};
+            courses[5] = {name: "WebTech", credit: 6, felev: "2"};
+            courses[6] = {name: "WebTech", credit: 6, felev: "2"};
+            courses[7] = {name: "WebTech", credit: 6, felev: "2"};
+            courses[8] = {name: "WebTech", credit: 6, felev: "2"};
+            courses[9] = {name: "WebTech", credit: 6, felev: "2"};
+
+            function createTable(){
+                //meg kell keresni az adott html elemet
+                //1. document,getElementBy(id) : id alapjan
+                //2. document.querySelection(selector): CSS selector
+                //3. document.getElementByClassName(class) : CSS class név alapján
+                let table = document.querySelector(".courses-table"); //vissza ad egy html elemet
+                console.log("table: " + table)
+                //let tableBody = document.crea
+                courses.forEach( (course) => {   //lambda kifejezést vár
+                    let row = document.createElement("tr"); //létrehozunk egy tr html elemet (sor)
+                    let name = document.createElement("td");
+                    let credit = document.createElement("td");
+                    let felev = document.createElement("td");
+
+                    name.appendChild(document.createTextNode(course.name));
+                    credit.appendChild(document.createTextNode(course.credit));
+                    felev.appendChild(document.createTextNode(course.felev));
+
+                    //tr-hez adjuk hozzá a td-t
+                    row.appendChild(name);
+                    row.appendChild(credit);
+                    row.appendChild(felev);
+
+                    table.appendChild(row);
+
+                }); 
+            }
+        </script>
     </head>
-    <body>
+    <body onload="createTable()">
         <h1>Üdvözöljük a Debreceni Egyetem IK honlapján!</h1>
 
         <ul>
@@ -13,5 +56,15 @@
             <li>Hírek</li>
             <li>Egyéb</li>
         </ul>
+
+        <h2>HTML Table</h2>
+
+<table class="courses-table">
+  <tr>
+    <th>Tárgyak</th>
+    <th>Kredit</th>
+    <th>Félév</th>
+  </tr>
+</table>
     </body>
 </html>
